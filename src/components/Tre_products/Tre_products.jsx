@@ -1,6 +1,7 @@
 import React from 'react'
 import {Container, Row, Col} from 'reactstrap'
 import './tre_products.css'
+import ProductList from '../ProductList/ProductList'
 
 const tre_products = () => {
   return (
@@ -10,6 +11,7 @@ const tre_products = () => {
             <Col lg='12' className="text-center">
                 <h2 className="section_title">Trending Products</h2>
             </Col>
+            <ProductList/>
            </Row> 
         </Container>
     </section>

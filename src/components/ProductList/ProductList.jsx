@@ -4,11 +4,12 @@ import ProductCard from '../Productcard/ProductCard'
 
 const ProductList = () => {
   return (
-    <div>
+    <>
       <ProductCard/>
       <ProductCard/>
       <ProductCard/>
-    </div>
+      <ProductCard/>
+    </>
   )
 }
 
