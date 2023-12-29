@@ -5,6 +5,7 @@ import Services from '../.././services/Services'
 import TreProducts from '../../components/Tre_products/Tre_products'
 import Timer from '../../components/Timer/Timer'
 import NewArrival from '../../components/New_Arrival/NewArrival'
+import PopularList from '../../components/PopularList/PopularList'
 
 
 const Home = () => {
@@ -22,6 +23,9 @@ const Home = () => {
         </div>
         <div>
           <NewArrival/>
+        </div>
+        <div>
+          <PopularList/>
         </div>
         
     </div>
