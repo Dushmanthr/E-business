@@ -10,7 +10,7 @@ import PopularList from '../../components/PopularList/PopularList'
 
 const Home = () => {
   return (
-    <div> 
+    <div className='herosection'> 
         <Home_div/> 
 
         <div>

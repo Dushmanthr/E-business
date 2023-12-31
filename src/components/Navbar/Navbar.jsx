@@ -1,4 +1,5 @@
 import React from 'react'
+import {useRef, useEffect} from 'react'
 import './navbar.css'
 import { NavLink } from 'react-router-dom'
 import {motion} from "framer-motion"
@@ -28,8 +29,30 @@ const nav_links = [
 
 
 const Navbar = () => {
+
+  const navRef = useRef(null);
+  const menuRef = useRef(null);
+
+  const stickyNavFunc = ()=>{
+    window.addEventListener('scroll', ()=>{
+      if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+        navRef.current.classList.add('sticky_nav');
+      }else{
+        navRef.current.classList.remove('sticky_nav');
+      }
+      
+    });
+  }
+
+  useEffect(()=>{
+      stickyNavFunc()
+
+      return ()=> window.removeEventListener('scroll', stickyNavFunc)
+  });
+
+    const menuToggle = ()=> menuRef.current.classList.toggle('active_menu')
   return (
-    <navbar className="navbar">
+    <navbar className="navbar" ref={navRef}>
       <Container>
       <Row>
         <div className="nav_wrapper">
@@ -41,7 +64,7 @@ const Navbar = () => {
             </div>
           </div>
           
-          <div className="navigation">
+          <div className="navigation" ref={menuRef} onClick={menuToggle}>
             <ul className="menu">
               {
                 nav_links.map((item, index)=>(
@@ -67,10 +90,11 @@ const Navbar = () => {
             </span>
 
             <span><motion.img whileTap={{scale:1.2}} src={userIcon} alt="" /></span>
+            <div className="mobile_menu">
+            <span onClick={menuToggle}><BiMenu className="meic"/></span>
           </div>
-          <div className="mobile_menu">
-            <span><BiMenu/></span>
           </div>
+          
         </div>
       </Row>
     </Container>

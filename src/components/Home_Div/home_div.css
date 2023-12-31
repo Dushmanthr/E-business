@@ -43,3 +43,32 @@
 .hero_content{
     padding-top: 45px;
 }
+
+@media only screen and (max-width: 992px){
+    .hero_content h1{
+        font-size: 2rem;
+    }
+    .section_title{
+        
+    }
+}
+@media only screen and (max-width: 768px){
+    .hero_content h1{
+        font-size:1.6rem;
+    }
+
+    .hero_content p{
+        font-size: 0.9rem;
+    }
+
+    .buy_btn{
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .hero_content{
+        padding-top: 0;
+        margin-bottom: 40px;
+    }
+}
